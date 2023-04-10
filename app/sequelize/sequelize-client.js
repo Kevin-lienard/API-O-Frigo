@@ -11,11 +11,12 @@ const defineAttributes = {
 
 const sequelize = new Sequelize(PG_URL, defineAttributes);
 
-try {
-    sequelize.authenticate();
-    console.log('Connection has been established successfully.');
+(async function(){
+    try {
+   sequelize.authenticate();
+   console.log('Connection has been established successfully.');
 } catch (error) {
-    console.error('Unable to connect to the database:', error);
-}
+   console.error('Unable to connect to the database:', error);
+}})();
 
 module.exports = sequelize;
