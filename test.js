@@ -14,6 +14,6 @@ async function getRecipeWithTags(id){
     return recipeWithTags;
 };
 
-(async function() {
+(async function(){
     console.log(await getRecipeWithTags(1));
 })();
