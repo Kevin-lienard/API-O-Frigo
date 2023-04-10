@@ -9,3 +9,8 @@
 - A la création du mot de passe, entrer ```ofrigo```
 - Revenir a la racine du projet
 - Lancer la commande ```node server.js```
+
+## Route :
+
+- /recipe
+- /recipe/:id
