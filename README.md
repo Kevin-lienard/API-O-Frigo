@@ -5,7 +5,7 @@
 
 ## Etapes :
 - Lancer la commande ```npm i``` pour installer les dépendances
-- Se positionner sur le repertoire ```migration```
+- Se positionner sur le repertoire ```./app/migration```
 - Lancer la commande ```bash init.sh```
 - A la création du mot de passe, entrer ```ofrigo``` 
 - Entrer le mot de passe une nouvelle fois pour confirmer
