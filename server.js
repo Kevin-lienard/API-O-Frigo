@@ -1,11 +1,11 @@
 const express = require('express');
-const routerRecipe = require("./app/router/recipe");
+const { recipe } = require("./app/router");
 const app = express();
 
 app.use(express.static('./asset'));
 app.use(express.json());
 
-app.use(routerRecipe);
+app.use(recipe);
 
 const PORT = 3000;
 app.listen(PORT, ()=>{
