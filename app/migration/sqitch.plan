@@ -1,0 +1,5 @@
+%syntax-version=1.0.0
+%project=ofrigo
+
+1.init 2023-04-10T14:06:52Z Etudiant O'clock <student@teleporter> # create tables
+2.insert 2023-04-10T14:06:52Z Etudiant O'clock <student@teleporter> # insert data
