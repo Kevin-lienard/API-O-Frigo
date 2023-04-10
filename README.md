@@ -14,5 +14,5 @@
 
 ## Routes :
 
-- /recipe
-- /recipe/:id
+- http://localhost:3000/recipe
+- http://localhost:3000/recipe/:id
