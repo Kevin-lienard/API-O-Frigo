@@ -1,0 +1,3 @@
+# Dependencies :
+    -pg
+    -sequelize
