@@ -1,4 +1,5 @@
 ## Dependencies :
+- express
 - pg
 - sequelize
 
