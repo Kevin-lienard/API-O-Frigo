@@ -1,20 +1,19 @@
 const { Recipe } = require("./model");
 
-async function getAllRecipe() {
-    const recipe = await Recipe.findAll();
+async function getRecipeWithTags(id){
+    const recipeTag = await Recipe.findByPk(id, { include: { association: 'tagRecipe' }, order: [['tagRecipe', 'label', 'ASC']] });
+    const recipe = await Recipe.findByPk(id);
 
-    console.log(recipe);
-};
+    const recipeWithTags = recipe.dataValues;
+    recipeWithTags.tags = [];
 
-async function getRecipeById(id) {
-    const recipe = await Recipe.findByPk(id, { include: { association: 'tagRecipe' }});
-
-    //console.log(recipe.dataValues);
-
-    for(const tag of recipe.dataValues.tagRecipe){
-        console.log(tag.label);
+    for(const tag of recipeTag.dataValues.tagRecipe){
+        recipeWithTags.tags.push(tag.label);
     }
+
+    return recipeWithTags;
 };
 
-//getAllRecipe();
-getRecipeById(1);
+(async function() {
+    console.log(await getRecipeWithTags(1));
+})();
