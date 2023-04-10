@@ -10,7 +10,7 @@
 - Revenir a la racine du projet
 - Lancer la commande ```node server.js```
 
-## Route :
+## Routes :
 
 - /recipe
 - /recipe/:id
