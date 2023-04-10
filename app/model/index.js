@@ -11,12 +11,12 @@ const Tag = require("./Tag");
 
 Account.hasMany(Message, {
     foreignKey: "account_id",
-    as: "messageAccount"
+    as: "accountMessage"
 });
 
 Message.belongsTo(Account, {
     foreignKey: "account_id",
-    as: "accountMessage"
+    as: "messageAccount"
 });
 
 // Account <-> Ingredient
@@ -24,14 +24,14 @@ Message.belongsTo(Account, {
 Account.belongsToMany(Ingredient, {
     foreignKey: "account_id",
     otherKey: "ingredient_id",
-    as: "ingredientAccount",
+    as: "accountIngredient",
     through: "account_has_ingredient"
 });
 
 Ingredient.belongsToMany(Account, {
     foreignKey: "ingredient_id",
     otherKey: "account_id",
-    as: "accountIngredient",
+    as: "ingredientAccount",
     through: "account_has_ingredient"
 });
 
@@ -39,12 +39,12 @@ Ingredient.belongsToMany(Account, {
 
 Ingredient.belongsTo(Category, {
     foreignKey: "category_id",
-    as: "categoryIngredient"
+    as: "ingredientCategory"
 });
 
 Category.hasMany(Ingredient, {
     foreignKey: "category_id",
-    as: "ingredientCategory"
+    as: "categoryIngredient"
 });
 
 // Recipe <-> Ingredient
@@ -52,14 +52,14 @@ Category.hasMany(Ingredient, {
 Recipe.belongsToMany(Ingredient, {
     foreignKey: "recipe_id",
     otherKey: "ingredient_id",
-    as: "ingredientRecipe",
+    as: "recipeIngredient",
     through: "recipe_has_ingredient"
 });
 
 Ingredient.belongsToMany(Recipe, {
     foreignKey: "ingredient_id",
     otherKey: "recipe_id",
-    as: "recipeIngredient",
+    as: "ingredientRecipe",
     through: "recipe_has_ingredient"
 });
 
@@ -68,14 +68,14 @@ Ingredient.belongsToMany(Recipe, {
 Recipe.belongsToMany(Tag, {
     foreignKey: "recipe_id",
     otherKey: "tag_id",
-    as: "tagRecipe",
+    as: "recipeTag",
     through: "recipe_has_tag"
 });
 
 Tag.belongsToMany(Recipe, {
     foreignKey: "tag_id",
     otherKey: "recipe_id",
-    as: "recipeTag",
+    as: "tagRecipe",
     through: "recipe_has_tag"
 });
 
@@ -83,24 +83,24 @@ Tag.belongsToMany(Recipe, {
 
 Recipe.hasMany(Step, {
     foreignKey: "recipe_id",
-    as: "stepRecipe"
+    as: "recipeStep"
 });
 
 Step.belongsTo(Recipe, {
     foreignKey: "recipe_id",
-    as: "recipeStep"
+    as: "stepRecipe"
 });
 
 // Recipe <-> Quantity
 
 Recipe.hasMany(Quantity, {
     foreignKey: "recipe_id",
-    as: "quantityRecipe"
+    as: "recipeQuantity"
 });
 
 Step.belongsTo(Recipe, {
     foreignKey: "recipe_id",
-    as: "recipeQuantity"
+    as: "stepQuantity"
 });
 
 module.exports = { 
