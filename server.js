@@ -1,12 +1,12 @@
-const express = require('express');
-const { recipe } = require("./app/router");
-const app = express();
+const dotenv = require("dotenv");
+dotenv.config();
+const debug = require("debug")("express");
+const cors = require('cors');
+const app = require("./app/index");
 
-app.use(express.json());
+app.use(cors());
 
-app.use(recipe);
-
-const PORT = 3000;
+const PORT = process.env.PORT ?? 3000;
 app.listen(PORT, ()=>{
-    console.log(`Server running on port: ${PORT}`);
+    debug(`Server running on port: ${PORT}`);
 });
