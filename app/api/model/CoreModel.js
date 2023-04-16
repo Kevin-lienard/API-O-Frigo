@@ -3,6 +3,7 @@ const ofrigo = require("../client/client-db-ofrigo");
 
 class CoreModel{
     id;
+    
     constructor (obj) {
         this.id = obj.id;
     };
